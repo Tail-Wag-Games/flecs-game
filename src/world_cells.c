@@ -99,7 +99,7 @@ void FindWorldCell(ecs_iter_t *it) {
             continue;
         }
 
-        ecs_query_populate(it);
+        ecs_query_populate(it, false);
 
         EcsPosition3 *pos = ecs_field(it, EcsPosition3, 1);
         WorldCellCache *wcache = ecs_field(it, WorldCellCache, 2);
@@ -117,7 +117,7 @@ void SetWorldCell(ecs_iter_t *it) {
             continue;
         }
 
-        ecs_query_populate(it);
+        ecs_query_populate(it, false);
 
         ecs_world_t *world = it->world;
         WorldCellCache *wcache = ecs_field(it, WorldCellCache, 1);
@@ -141,7 +141,7 @@ void ResetWorldCellCache(ecs_iter_t *it) {
             continue;
         }
 
-        ecs_query_populate(it);
+        ecs_query_populate(it, false);
 
         WorldCellCache *wcache = ecs_field(it, WorldCellCache, 1);
         bool changed = false;

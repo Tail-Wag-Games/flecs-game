@@ -241,12 +241,12 @@ void FlecsGameCameraControllerImport(ecs_world_t *world) {
         [in]     flecs.components.graphics.LookAt,
         [none]   CameraController);
 
-    ECS_SYSTEM(world, CameraControllerAccelerate, EcsOnUpdate,
-        [in]     flecs.components.input.Input($),
-        [in]     flecs.components.transform.Rotation3,
-        [inout]  flecs.components.physics.Velocity3,
-        [inout]  flecs.components.physics.AngularVelocity,
-        [none]   CameraController);
+    // ECS_SYSTEM(world, CameraControllerAccelerate, EcsOnUpdate,
+    //     [in]     flecs.components.input.Input($),
+    //     [in]     flecs.components.transform.Rotation3,
+    //     [inout]  flecs.components.physics.Velocity3,
+    //     [inout]  flecs.components.physics.AngularVelocity,
+    //     [none]   CameraController);
 
     ECS_SYSTEM(world, CameraControllerDecelerate, EcsOnUpdate,
         [inout]  flecs.components.physics.Velocity3,
